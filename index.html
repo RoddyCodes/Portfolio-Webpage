@@ -19,7 +19,9 @@
         };
     </script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="chess.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
     <header class="bg-primary text-white py-20">
@@ -52,12 +54,12 @@
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 project-card">
                     <h3 class="text-xl font-bold mb-2">Todo Management Application</h3>
                     <p class="text-gray-700">A full-stack task management app with CRUD functionalities using Express.js, REST APIs, and GraphQL. Tested with Jest for reliability.</p>
                     <a href="https://github.com/RoddyCodes" class="text-primary mt-4 block hover:underline">View on GitHub</a>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 project-card">
                     <h3 class="text-xl font-bold mb-2">Bloom Assist Chatbot</h3>
                     <p class="text-gray-700">Developed a conversational Retrieval-Augmented Generation (RAG) chatbot, "Bloom Assist", to help frontline workers and individuals access affordable housing resources.  Key technologies include Next.js, NestJS, FastAPI, and a Python LLM microservice.  The chatbot uses markdown-based static content and can access real-time data via the Bloom Housing API.</p>
                     <a href="https://github.com/glarerena/jtc-capstone-2025" class="text-primary mt-4 block hover:underline">View on GitHub</a>
@@ -194,6 +196,56 @@
                 updateBoard();
             };
             updateBoard();
+
+             // Scroll Reveal
+            ScrollReveal().reveal('.about-me-image', {
+                duration: 1000,
+                origin: 'bottom',
+                distance: '20px',
+                easing: 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('#about h2', {
+                duration: 1000,
+                origin: 'top',
+                distance: '20px',
+                easing: 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('#about p', {
+                duration: 1000,
+                delay: 200,
+                opacity: 0,
+                easing: 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('#projects h2', {
+                duration: 1000,
+                origin: 'top',
+                distance: '20px',
+                easing: 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('.project-card', {
+                duration: 1000,
+                interval: 200,
+                opacity: 0,
+                easing: 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('#contact h2', {
+                duration: 1000,
+                origin: 'top',
+                distance: '20px',
+                easing: 'ease-in-out'
+            });
+
+            ScrollReveal().reveal('#contact p', {
+                duration: 1000,
+                delay: 200,
+                opacity: 0,
+                easing: 'ease-in-out'
+            });
         });
     </script>
 </body>
