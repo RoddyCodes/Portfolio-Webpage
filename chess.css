@@ -1,0 +1,30 @@
+#board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px); /* Adjust size for larger squares */
+    grid-template-rows: repeat(8, 60px);
+    gap: 1px;
+    border: 4px solid #4f46e5; /* Matches your primary color */
+    margin: 20px auto;
+    width: 480px;
+    height: 480px;
+}
+
+#board .light {
+    background-color: #f0d9b5; /* Light beige squares */
+}
+
+#board .dark {
+    background-color: #b58863; /* Dark brown squares */
+}
+
+#board div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#board img {
+    width: 50px; /* Slightly smaller than the square */
+    height: 50px;
+    pointer-events: none; /* Prevent dragging pieces */
+}
