@@ -52,5 +52,6 @@ jobs:
           publish_dir: .
           force_orphan: true
           keep_files: false
+
       - name: Clean up
         run: git reset --hard
