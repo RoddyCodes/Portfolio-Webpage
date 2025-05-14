@@ -1,0 +1,25 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Node.js and npm (if you happen to have any in the future)
+node_modules/
+package-lock.json
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.log
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Deployment related
+/out/
+/build/
+/dist/
+
+# Local environment files
+.env
