@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or your default branch
+      - main
 
 jobs:
   deploy:
@@ -11,35 +11,46 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Important: Fetch full history for proper `gh-pages` branch handling
+          fetch-depth: 0
+
+      - name: Show directory structure (Step 1: After Checkout)
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -laR # List all files and directories recursively
 
       - name: Set up Git
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Create or update `gh-pages` branch
+      - name: Create or update gh-pages branch
         run: |
-          # Attempt to create the branch, but ignore if it already exists
           git checkout --orphan gh-pages || true
-          # If the branch exists, clear its content
           git rm -rf .
-          echo "Deployment to GitHub Pages" > CNAME # Add CNAME file
+          echo "MyDomain.com" > CNAME # Add CNAME file
+
+      - name: Show directory structure (Step 2: After gh-pages branch)
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -laR
 
       - name: Copy files to deploy
         run: |
-          # Copy your website's files to the `gh-pages` branch.  Adjust the source directory as needed.
-          cp -r ./dist/* ./  #  <--  Adjust './dist' to your actual output directory (e.g., './build', './public', './').  If it is the root, use  cp -r ./* ./
-          # If you have a CNAME file, copy it.
-          #  cp CNAME ./
+          #  This is where we will copy the files.  For now, I'm keeping the 'dist'
+          #  placeholder.  We will change it based on the output of the
+          #  previous step.
+          cp -r ./dist/* ./
+          echo "Current directory: $(pwd)"
+          ls -laR # show files after the copy
+          echo "Files in the current directory:"
+          ls -la
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .  #  Crucial:  Publish from the root of the `gh-pages` branch
-          force_orphan: true # make sure that we are not accumulating history.
-          keep_files: false #remove all existing files before new deployment
-
+          publish_dir: .
+          force_orphan: true
+          keep_files: false
       - name: Clean up
         run: git reset --hard
