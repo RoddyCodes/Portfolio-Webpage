@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan's Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#9333ea',
+                        accent: '#22d3ee',
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-primary text-white py-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">My Blog</h1>
+            <a href="../index.html" class="text-accent hover:underline">Back to Portfolio</a>
+        </div>
+    </header>
+    <main class="container mx-auto py-10">
+        <div id="blog-posts" class="space-y-6">
+            <div class="text-center mb-8">
+                <a href="newBlog.html" class="bg-accent text-black px-6 py-3 rounded-lg shadow-md hover:bg-secondary transition-colors duration-200 inline-block">Create New Post</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        const blogPostsContainer = document.getElementById('blog-posts');
+
+        function displayPosts() {
+            blogPostsContainer.innerHTML = '';
+            let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [
+                {
+                    title: "My First Blog Post!",
+                    date: "2024/07/24",
+                    content: "This is the content of my My First Website: A Journey into CodeHello world! (Yes, I had to start with that 😉)I'm so excited to share something I've been working on: my very own website! This might seem like a small thing to some, but for me, it's a huge step in a journey I'm incredibly passionate about – becoming a software engineer.Where It All StartedI've always been fascinated by technology. How websites come to life, how apps work their magic, it all seemed like...well, magic. But instead of just accepting the magic, I wanted to understand it. That curiosity led me to start learning to code.Let me tell you, it hasn't been a smooth ride. There were moments of frustration, countless hours of debugging (and questioning my life choices!), and times when I felt completely lost in a sea of code. But with every challenge, there was also the thrill of discovery, the satisfaction of solving a problem, and the joy of seeing my code actually do something.Building My Website: A Labor of LoveThis website is more than just a collection of HTML, CSS, and JavaScript (though it is that, too!). It's a reflection of my journey so far. It's the place where I'm documenting my progress, sharing what I've learned, and showcasing the projects I'm working on.The process of building this site has been a huge learning experience. I've learned about:Front-end development: HTML for structure, CSS for styling, and JavaScript for interactivity.Version control: Using Git and GitHub to manage my code and collaborate (especially with my Capstone team).Problem-solving: How to break down complex problems into smaller, more manageable chunks.Persistence: The importance of not giving up, even when things get tough (and they often do!).The Future: My Path to Software EngineeringThis website is just the beginning. I'm determined to continue learning, to keep building, and to grow my skills. My goal is to become a software engineer, to create amazing things that solve real-world problems, and to contribute to the ever-evolving world of technology.I know I have a lot to learn, but I'm excited about the challenges ahead. I want to:Master more programming languages: I'm currently focused on software engineering, but I'm eager to explore other languages like Java or C++.Dive deeper into frameworks: I want to become proficient in frameworks like React, Angular, or Vue.js to build more complex and dynamic web applications.Learn about databases and back-end development: To understand how data is stored and managed.Contribute to open-source projects: To collaborate with other developers and learn from their expertise.Thank You for Joining Me!I'm excited to share my journey with you. Whether you're a fellow developer, a friend, or someone who's just curious about coding, I hope you'll follow along. I plan to use this blog to post about my projects, share tutorials, and talk about my experiences in the world of software development.Thanks for reading, and stay tuned for more! blog post. It can contain a lot of text, and will be styled with Tailwind.",
+                    author: "Ryan Pham"
+                },
+            ];
+
+            blogPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('bg-white', 'rounded-lg', 'shadow-md', 'p-6', 'hover:shadow-lg', 'transition-shadow', 'duration-200');
+                postElement.innerHTML = `
+                    <h2 class="text-2xl font-semibold mb-2">${post.title}</h2>
+                    <p class="text-gray-500 text-sm mb-3">Published on ${post.date} by ${post.author}</p>
+                    <p class="text-gray-700 leading-relaxed">${post.content}</p>
+                `;
+                blogPostsContainer.appendChild(postElement);
+            });
+        }
+
+        displayPosts();
+    </script>
+</body>
+</html>
