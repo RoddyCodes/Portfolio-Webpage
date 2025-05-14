@@ -7,18 +7,21 @@ This repository contains the code for my personal portfolio webpage.  It's desig
 **Key Features:**
 
 * **About Me:** A section introducing myself, my background, and my interests.
-* **Projects:** A showcase of my projects, including descriptions, links, and possibly images or demos.
-* **Skills:** A list of my technical skills (e.g., programming languages, frameworks, tools).
-* **Experience:** Details of my professional experience, including previous roles and responsibilities.
-* **Contact:** Information on how to get in touch with me (e.g., email, LinkedIn).
+* **Projects:** A showcase of my projects, including descriptions, links, and details.
+* **Chess Game:** An interactive chess game against an AI opponent.
+* **Contact:** Information on how to get in touch with me (e.g., email, GitHub).
 * **Responsive Design:** The webpage is designed to be responsive and work well on different screen sizes (desktop, tablet, mobile).
+* **Interactive Elements:** The webpage includes animations and interactive elements to enhance user experience
 
 ## Technologies Used
 
 * **HTML:** The structure of the webpage.
 * **CSS:** Styling for the webpage (e.g., layout, colors, fonts).  [Specify framework if used, e.g., Tailwind CSS, Bootstrap]
 * **JavaScript:** Interactive elements and functionality. [Specify framework/library if used, e.g., React, Vue, jQuery]
-* **[Add any other technologies used, e.g., Git, GitHub Pages, specific libraries]**
+* **AOS (Animate on Scroll):** Library for scroll-based animations.
+* **Chess.js:** Library for chess game logic.
+* **Git:** Version control.
+* **GitHub Pages:** Deployment.
 
 ## Installation
 
@@ -83,10 +86,8 @@ Portfolio-Webpage/
 
 Here are some potential future improvements:
 
-* Add more projects to the portfolio.
 * Implement a blog section.
-* Improve the design and user experience.
-* Add animations or interactive elements.
+* Add more projects to the portfolio.
 * Optimize for search engines (SEO).
 
 ##  Contact

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan Pham - Software Engineer // Data Scientist</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,23 +18,20 @@
             },
         };
     </script>
-    <!-- Chess Game Logic -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
     <script defer src="chess.js"></script>
     <link rel="stylesheet" href="chess.css">
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <!-- Hero Section -->
-    <header class="bg-primary text-white py-20">
+<body class="bg-gray-100 text-gray-800 font-sans"> <header class="bg-primary text-white py-20">
         <div class="container mx-auto text-center">
-            <h1 class="text-5xl font-bold mb-4">Ryan Pham</h1>
-            <p class="text-lg mb-6">Software Engineer | Full-Stack Developer | Data Scientist</p>
-            <a href="#projects" class="bg-accent text-black px-6 py-3 rounded-lg shadow hover:bg-secondary transition">View Projects</a>
-            <a href="#contact" class="ml-4 bg-secondary text-white px-6 py-3 rounded-lg shadow hover:bg-accent transition">Contact Me</a>
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Ryan Pham</h1> <p class="text-lg mb-6">Software Engineer | Full-Stack Developer | Data Scientist</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#projects" class="bg-accent text-black px-6 py-3 rounded-lg shadow hover:bg-secondary transition-all duration-300 hover:scale-105 text-lg">View Projects</a>
+                <a href="#contact" class="bg-secondary text-white px-6 py-3 rounded-lg shadow hover:bg-accent transition-all duration-300 hover:scale-105 text-lg">Contact Me</a>
+            </div>
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about" class="py-20">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">About Me</h2>
@@ -50,21 +46,23 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="bg-gray-200 py-20">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8"> <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
                     <h3 class="text-xl font-bold mb-2">Todo Management Application</h3>
                     <p class="text-gray-700">A full-stack task management app with CRUD functionalities using Express.js, REST APIs, and GraphQL. Tested with Jest for reliability.</p>
                     <a href="https://github.com/RoddyCodes" class="text-primary mt-4 block hover:underline">View on GitHub</a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-xl font-bold mb-2">Bloom Assist Chatbot</h3>
+                    <p class="text-gray-700">Developed a conversational Retrieval-Augmented Generation (RAG) chatbot, "Bloom Assist", to help frontline workers and individuals access affordable housing resources.  Key technologies include Next.js, NestJS, FastAPI, and a Python LLM microservice.  The chatbot uses markdown-based static content and can access real-time data via the Bloom Housing API.</p>
+                    <a href="https://github.com/glarerena/jtc-capstone-2025" class="text-primary mt-4 block hover:underline">View on GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Chess Game Section -->
     <section id="chess-game" class="py-20 bg-gray-200">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Chess Game</h2>
@@ -74,7 +72,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="bg-primary text-white py-20">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
@@ -85,7 +82,7 @@
     </section>
 
     <footer class="bg-gray-800 text-gray-400 py-4 text-center">
-        <p>&copy; 2024 Ryan Pham. All Rights Reserved.</p>
+        <p>&copy; 2025 Ryan Pham. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

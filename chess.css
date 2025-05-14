@@ -28,3 +28,12 @@
     height: 50px;
     pointer-events: none; /* Prevent dragging pieces */
 }
+
+.possible-move {
+    background-color: rgba(0, 255, 0, 0.5); /* Semi-transparent green */
+    border: 2px solid green;
+}
+.selected{
+   background-color: rgba(255, 255, 0, 0.5); /* Semi-transparent yellow */
+   border: 2px solid yellow;
+}
