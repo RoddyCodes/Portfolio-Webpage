@@ -16,7 +16,7 @@ jobs:
       - name: Show directory structure (Step 1: After Checkout)
         run: |
           echo "Current directory: $(pwd)"
-          ls -laR # List all files and directories recursively
+          ls -laR
 
       - name: Set up Git
         run: |
@@ -27,7 +27,7 @@ jobs:
         run: |
           git checkout --orphan gh-pages || true
           git rm -rf .
-          echo "MyDomain.com" > CNAME # Add CNAME file
+          echo "MyDomain.com" > CNAME
 
       - name: Show directory structure (Step 2: After gh-pages branch)
         run: |
@@ -41,7 +41,7 @@ jobs:
           #  previous step.
           cp -r ./dist/* ./
           echo "Current directory: $(pwd)"
-          ls -laR # show files after the copy
+          ls -laR
           echo "Files in the current directory:"
           ls -la
 
