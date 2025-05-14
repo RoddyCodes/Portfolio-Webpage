@@ -3,55 +3,9 @@ on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Show directory structure (Step 1: After Checkout)
-        run: |
-          echo "Current directory: $(pwd)"
-          ls -laR
-
-      - name: Set up Git
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Create or update gh-pages branch
-        run: |
-          git checkout --orphan gh-pages || true
-          git rm -rf .
-          echo "MyDomain.com" > CNAME
-
-      - name: Show directory structure (Step 2: After gh-pages branch)
-        run: |
-          echo "Current directory: $(pwd)"
-          ls -laR
-
-      - name: Copy files to deploy
-        run: |
-          #  This is where we will copy the files.  For now, I'm keeping the 'dist'
-          #  placeholder.  We will change it based on the output of the
-          #  previous step.
-          cp -r ./dist/* ./
-          echo "Current directory: $(pwd)"
-          ls -laR
-          echo "Files in the current directory:"
-          ls -la
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          force_orphan: true
-          keep_files: false
-
-      - name: Clean up
-        run: git reset --hard
