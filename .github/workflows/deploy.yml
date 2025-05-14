@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or your main branch name
+      - main # Or your default branch
 
 jobs:
   deploy:
@@ -10,10 +10,36 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Important: Fetch full history for proper `gh-pages` branch handling
+
+      - name: Set up Git
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create or update `gh-pages` branch
+        run: |
+          # Attempt to create the branch, but ignore if it already exists
+          git checkout --orphan gh-pages || true
+          # If the branch exists, clear its content
+          git rm -rf .
+          echo "Deployment to GitHub Pages" > CNAME # Add CNAME file
+
+      - name: Copy files to deploy
+        run: |
+          # Copy your website's files to the `gh-pages` branch.  Adjust the source directory as needed.
+          cp -r ./dist/* ./  #  <--  Adjust './dist' to your actual output directory (e.g., './build', './public', './').  If it is the root, use  cp -r ./* ./
+          # If you have a CNAME file, copy it.
+          #  cp CNAME ./
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  #  <--  Important:  Set this to the directory containing your HTML files
-          force_orphan: true # add this
+          publish_dir: .  #  Crucial:  Publish from the root of the `gh-pages` branch
+          force_orphan: true # make sure that we are not accumulating history.
+          keep_files: false #remove all existing files before new deployment
+
+      - name: Clean up
+        run: git reset --hard
