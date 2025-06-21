@@ -1,252 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Pham - Software Engineer // Data Scientist</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ryan Pham - Software Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#4f46e5',
-                        secondary: '#9333ea',
-                        accent: '#22d3ee',
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4f46e5",
+              secondary: "#9333ea",
+              accent: "#22d3ee",
             },
-        };
+          },
+        },
+      };
     </script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="chess.css">
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="chess.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
     <header class="bg-primary text-white py-20">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Ryan Pham</h1>
-            <p class="text-lg mb-6">Software Engineer | Full-Stack Developer | Data Scientist</p>
-            <div class="flex justify-center space-x-4">
-                <a href="#projects" class="bg-accent text-black px-6 py-3 rounded-lg shadow hover:bg-secondary transition-all duration-300 hover:scale-105 text-lg">View Projects</a>
-                <a href="blog/index.html" class="bg-secondary text-white px-6 py-3 rounded-lg shadow hover:bg-accent transition-all duration-300 hover:scale-105 text-lg">View Blog</a>
-                <a href="#contact" class="bg-secondary text-white px-6 py-3 rounded-lg shadow hover:bg-accent transition-all duration-300 hover:scale-105 text-lg">Contact Me</a>
-            </div>
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">Ryan Pham</h1>
+        <p class="text-lg mb-6">
+          Software Engineer | Full-Stack Developer | ML/AI Enthusiast
+        </p>
+        <div class="flex justify-center space-x-4">
+          <a
+            href="#projects"
+            class="bg-accent text-black px-6 py-3 rounded-lg shadow hover:bg-secondary transition-all duration-300 hover:scale-105 text-lg"
+            >View Projects</a
+          >
+          <a
+            href="blog/index.html"
+            class="bg-secondary text-white px-6 py-3 rounded-lg shadow hover:bg-accent transition-all duration-300 hover:scale-105 text-lg"
+            >View Blog</a
+          >
+          <a
+            href="#contact"
+            class="bg-secondary text-white px-6 py-3 rounded-lg shadow hover:bg-accent transition-all duration-300 hover:scale-105 text-lg"
+            >Contact Me</a
+          >
         </div>
+      </div>
     </header>
 
     <section id="about" class="py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">About Me</h2>
-            <div class="flex flex-wrap items-center justify-center">
-                <div class="w-full md:w-1/2 px-4 mb-6">
-                    <p class="text-lg leading-relaxed">Hello! I'm Ryan Pham, a motivated and results-driven software engineer with a strong foundation in programming languages, algorithms, data structures, and full-stack development. Explore my work and feel free to connect with me!</p>
-                </div>
-                <div class="w-full md:w-1/3 px-4">
-                    <img src="professional_photo.jpg" alt="Professional Photo of Ryan Pham" class="rounded-full shadow-lg w-48 h-48 mx-auto">
-                </div>
-            </div>
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">About Me</h2>
+        <div class="flex flex-wrap items-center justify-center">
+          <div class="w-full md:w-1/2 px-4 mb-6">
+            <p class="text-lg leading-relaxed">
+              Hello! I'm Ryan Pham, a motivated and results-driven software
+              engineer with a strong foundation in programming languages,
+              algorithms, data structures, and full-stack development. Explore
+              my work and feel free to connect with me!
+            </p>
+          </div>
+          <div class="w-full md:w-1/3 px-4">
+            <img
+              src="professional_photo.jpg"
+              alt="Professional Photo of Ryan Pham"
+              class="rounded-full shadow-lg w-48 h-48 mx-auto"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="projects" class="bg-gray-200 py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 project-card">
-                    <h3 class="text-xl font-bold mb-2">Todo Management Application</h3>
-                    <p class="text-gray-700">A full-stack task management app with CRUD functionalities using Express.js, REST APIs, and GraphQL. Tested with Jest for reliability.</p>
-                    <a href="https://github.com/RoddyCodes" class="text-primary mt-4 block hover:underline">View on GitHub</a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 project-card">
-                    <h3 class="text-xl font-bold mb-2">Bloom Assist Chatbot</h3>
-                    <p class="text-gray-700">Developed a conversational Retrieval-Augmented Generation (RAG) chatbot, "Bloom Assist", to help frontline workers and individuals access affordable housing resources.  Key technologies include Next.js, NestJS, FastAPI, and a Python LLM microservice.  The chatbot uses markdown-based static content and can access real-time data via the Bloom Housing API.</p>
-                    <a href="https://github.com/glarerena/jtc-capstone-2025" class="text-primary mt-4 block hover:underline">View on GitHub</a>
-                </div>
-            </div>
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 project-card"
+          >
+            <h3 class="project-title">Advanced Calculator App</h3>
+            <p class="project-details">
+              An advanced, command-line calculator built with a focus on robust,
+              scalable software design. This project utilizes the Factory,
+              Memento, and Observer design patterns, and features a full
+              undo/redo history. It is backed by a suite of unit tests with over
+              90% code coverage, and the entire workflow is automated with a
+              CI/CD pipeline using GitHub Actions.
+            </p>
+            <a
+              href="https://github.com/RoddyCodes/Enhanced-Calculator-Project"
+              class="text-primary mt-4 block hover:underline"
+              >View on GitHub</a
+            >
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 project-card"
+          >
+            <h3 class="text-xl font-bold mb-2">HERO Chatbot</h3>
+            <p class="text-gray-700">
+              A full-stack, AI-powered chatbot designed to connect individuals
+              and frontline workers with affordable housing resources. This
+              application features a modern microservice architecture, including
+              a Next.js frontend, a primary backend API built with NestJS, and a
+              dedicated Python LLM microservice using FastAPI. It leverages a
+              Retrieval-Augmented Generation (RAG) pipeline to provide
+              contextually-aware answers grounded in a knowledge base of housing
+              information. To deliver the most current data, the chatbot also
+              integrates with the live Bloom Housing API for real-time listings.
+            </p>
+            <a
+              href="https://github.com/RoddyCodes/hero-jtc"
+              class="text-primary mt-4 block hover:underline"
+              >View on GitHub</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="chess-game" class="py-20 bg-gray-200">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Chess Game</h2>
-            <p class="mb-4">Play a game of chess against an AI opponent!</p>
-            <div id="board" class="board mx-auto"></div>
-            <div id="status" class="status mt-4"></div>
-        </div>
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Chess Game</h2>
+        <p class="mb-4">Play a game of chess against an AI opponent!</p>
+        <div id="board" class="board mx-auto"></div>
+        <div id="status" class="status mt-4"></div>
+      </div>
     </section>
 
     <section id="contact" class="bg-primary text-white py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-            <p class="text-lg mb-4">Email: <a href="mailto:roddyscodingservice@gmail.com" class="underline">roddyscodingservice@gmail.com</a></p>
-            <p class="text-lg mb-4">GitHub: <a href="https://github.com/RoddyCodes" class="underline">github.com/RoddyCodes</a></p>
-            <p class="text-lg mb-4">LinkedIn: <a href="https://www.linkedin.com/in/ryan-pham-385637181/" class="underline">https://www.linkedin.com/in/ryan-pham-385637181/</a></p>
-            <p class="text-lg">Phone: <a href="tel:+16094028455" class="underline">(609) 402 8455</a></p>
-        </div>
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+        <p class="text-lg mb-4">
+          Email:
+          <a href="mailto:roddyscodingservice@gmail.com" class="underline"
+            >roddyscodingservice@gmail.com</a
+          >
+        </p>
+        <p class="text-lg mb-4">
+          GitHub:
+          <a href="https://github.com/RoddyCodes" class="underline"
+            >github.com/RoddyCodes</a
+          >
+        </p>
+        <p class="text-lg mb-4">
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/ryan-pham-385637181/"
+            class="underline"
+            >https://www.linkedin.com/in/ryan-pham-385637181/</a
+          >
+        </p>
+        <p class="text-lg">
+          Phone: <a href="tel:+16094028455" class="underline">(609) 402 8455</a>
+        </p>
+      </div>
     </section>
 
     <footer class="bg-gray-800 text-gray-400 py-4 text-center">
-        <p>&copy; 2025 Ryan Pham. All Rights Reserved.</p>
+      <p>&copy; 2025 Ryan Pham. All Rights Reserved.</p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const board = document.getElementById('board');
-            const status = document.getElementById('status');
-            const game = new Chess();
+      document.addEventListener("DOMContentLoaded", () => {
+        const board = document.getElementById("board");
+        const status = document.getElementById("status");
+        const game = new Chess();
 
-            let selectedSquare = null;
+        let selectedSquare = null;
 
-            // Render the chessboard grid (8x8)
-            for (let row = 8; row >= 1; row--) {
-                for (let col = 0; col < 8; col++) {
-                    const square = document.createElement('div');
-                    square.className = (row + col) % 2 === 0 ? 'light' : 'dark';
-                    square.id = `${'abcdefgh'[col]}${row}`;
-                    board.appendChild(square);
-                }
+        // Render the chessboard grid (8x8)
+        for (let row = 8; row >= 1; row--) {
+          for (let col = 0; col < 8; col++) {
+            const square = document.createElement("div");
+            square.className = (row + col) % 2 === 0 ? "light" : "dark";
+            square.id = `${"abcdefgh"[col]}${row}`;
+            board.appendChild(square);
+          }
+        }
+
+        const updateBoard = (highlightMoves = []) => {
+          const squares = document.querySelectorAll("#board div");
+          squares.forEach((square) => {
+            const piece = game.get(square.id);
+            square.innerHTML = "";
+            square.classList.remove("possible-move"); // Remove previous highlights
+            if (selectedSquare === square.id) {
+              square.classList.add("selected");
             }
+            if (piece) {
+              const img = document.createElement("img");
+              img.src = `chess_images/${piece.color}${piece.type}.png`;
+              img.alt = `${
+                piece.color === "w" ? "White" : "Black"
+              } ${piece.type.toUpperCase()}`;
+              square.appendChild(img);
+            }
+            if (highlightMoves.includes(square.id)) {
+              square.classList.add("possible-move");
+            }
+          });
+          updateStatus();
+        };
 
-            const updateBoard = (highlightMoves = []) => {
-                const squares = document.querySelectorAll('#board div');
-                squares.forEach((square) => {
-                    const piece = game.get(square.id);
-                    square.innerHTML = '';
-                    square.classList.remove('possible-move'); // Remove previous highlights
-                    if (selectedSquare === square.id) {
-                        square.classList.add('selected')
-                    }
-                    if (piece) {
-                        const img = document.createElement('img');
-                        img.src = `chess_images/${piece.color}${piece.type}.png`;
-                        img.alt = `${piece.color === 'w' ? 'White' : 'Black'} ${piece.type.toUpperCase()}`;
-                        square.appendChild(img);
-                    }
-                    if (highlightMoves.includes(square.id)) {
-                        square.classList.add('possible-move');
-                    }
-                });
-                updateStatus();
-            };
+        const updateStatus = () => {
+          let statusText = "";
+          if (game.in_checkmate()) {
+            statusText =
+              "Checkmate! " +
+              (game.turn() === "w" ? "Black" : "White") +
+              " wins.";
+          } else if (game.in_draw()) {
+            statusText = "Draw!";
+          } else if (game.in_check()) {
+            statusText =
+              "Check! " +
+              (game.turn() === "w" ? "White" : "Black") +
+              " is in check.";
+          } else {
+            statusText = "Turn: " + (game.turn() === "w" ? "White" : "Black");
+          }
+          status.textContent = statusText;
+        };
 
-            const updateStatus = () => {
-                let statusText = '';
-                if (game.in_checkmate()) {
-                    statusText = 'Checkmate! ' + (game.turn() === 'w' ? 'Black' : 'White') + ' wins.';
-                } else if (game.in_draw()) {
-                    statusText = 'Draw!';
-                } else if (game.in_check()) {
-                    statusText = 'Check! ' + (game.turn() === 'w' ? 'White' : 'Black') + ' is in check.';
-                } else {
-                    statusText = 'Turn: ' + (game.turn() === 'w' ? 'White' : 'Black');
-                }
-                status.textContent = statusText;
-            };
+        // Function to get possible moves
+        const getPossibleMoves = (square) => {
+          const moves = game.moves({
+            square: square,
+            verbose: true,
+          });
+          return moves.map((move) => move.to);
+        };
 
-            // Function to get possible moves
-            const getPossibleMoves = (square) => {
-                const moves = game.moves({
-                    square: square,
-                    verbose: true
-                });
-                return moves.map(move => move.to);
-            };
+        // Handle square clicks
+        board.addEventListener("click", (e) => {
+          const clickedSquare = e.target.id;
 
-            // Handle square clicks
-            board.addEventListener('click', (e) => {
-                const clickedSquare = e.target.id;
+          if (!selectedSquare) {
+            selectedSquare = clickedSquare;
+            e.target.classList.add("selected");
+            const possibleMoves = getPossibleMoves(selectedSquare);
+            updateBoard(possibleMoves);
+            return;
+          }
 
-                if (!selectedSquare) {
-                    selectedSquare = clickedSquare;
-                    e.target.classList.add('selected');
-                    const possibleMoves = getPossibleMoves(selectedSquare);
-                    updateBoard(possibleMoves);
-                    return;
-                }
+          const move = game.move({ from: selectedSquare, to: clickedSquare });
 
-                const move = game.move({ from: selectedSquare, to: clickedSquare });
-
-                if (move) {
-                    selectedSquare = null;
-                    document.querySelector('.selected')?.classList.remove('selected');
-                    updateBoard();
-                    if (!game.game_over()) {
-                        // Trigger AI move after 500ms
-                        setTimeout(makeAIMove, 500);
-                    }
-
-                } else {
-                    selectedSquare = null;
-                    document.querySelector('.selected')?.classList.remove('selected');
-                    updateBoard();
-                }
-            });
-
-            // AI Move
-            const makeAIMove = () => {
-                if (game.game_over()) {
-                    updateBoard();
-                    return;
-                }
-
-                const moves = game.moves();
-                const randomMove = moves[Math.floor(Math.random() * moves.length)];
-                game.move(randomMove);
-                updateBoard();
-            };
+          if (move) {
+            selectedSquare = null;
+            document.querySelector(".selected")?.classList.remove("selected");
             updateBoard();
-
-             // Scroll Reveal
-            ScrollReveal().reveal('.about-me-image', {
-                duration: 1000,
-                origin: 'bottom',
-                distance: '20px',
-                easing: 'ease-in-out'
-            });
-
-            ScrollReveal().reveal('#about h2', {
-                duration: 1000,
-                origin: 'top',
-                distance: '20px',
-                easing: 'ease-in-out'
-            });
-
-            ScrollReveal().reveal('#about p', {
-                duration: 1000,
-                delay: 200,
-                opacity: 0,
-                easing: 'ease-in-out'
-            });
-
-            ScrollReveal().reveal('#projects h2', {
-                duration: 1000,
-                origin: 'top',
-                distance: '20px',
-                easing: 'ease-in-out'
-            });
-
-            ScrollReveal().reveal('.project-card', {
-                duration: 1000,
-                interval: 200,
-                opacity: 0,
-                easing: 'ease-in-out'
-            });
-
-            ScrollReveal().reveal('#contact h2', {
-                duration: 1000,
-                origin: 'top',
-                distance: '20px',
-                easing: 'ease-in-out'
-            });
-
-            ScrollReveal().reveal('#contact p', {
-                duration: 1000,
-                delay: 200,
-                opacity: 0,
-                easing: 'ease-in-out'
-            });
+            if (!game.game_over()) {
+              // Trigger AI move after 500ms
+              setTimeout(makeAIMove, 500);
+            }
+          } else {
+            selectedSquare = null;
+            document.querySelector(".selected")?.classList.remove("selected");
+            updateBoard();
+          }
         });
+
+        // AI Move
+        const makeAIMove = () => {
+          if (game.game_over()) {
+            updateBoard();
+            return;
+          }
+
+          const moves = game.moves();
+          const randomMove = moves[Math.floor(Math.random() * moves.length)];
+          game.move(randomMove);
+          updateBoard();
+        };
+        updateBoard();
+
+        // Scroll Reveal
+        ScrollReveal().reveal(".about-me-image", {
+          duration: 1000,
+          origin: "bottom",
+          distance: "20px",
+          easing: "ease-in-out",
+        });
+
+        ScrollReveal().reveal("#about h2", {
+          duration: 1000,
+          origin: "top",
+          distance: "20px",
+          easing: "ease-in-out",
+        });
+
+        ScrollReveal().reveal("#about p", {
+          duration: 1000,
+          delay: 200,
+          opacity: 0,
+          easing: "ease-in-out",
+        });
+
+        ScrollReveal().reveal("#projects h2", {
+          duration: 1000,
+          origin: "top",
+          distance: "20px",
+          easing: "ease-in-out",
+        });
+
+        ScrollReveal().reveal(".project-card", {
+          duration: 1000,
+          interval: 200,
+          opacity: 0,
+          easing: "ease-in-out",
+        });
+
+        ScrollReveal().reveal("#contact h2", {
+          duration: 1000,
+          origin: "top",
+          distance: "20px",
+          easing: "ease-in-out",
+        });
+
+        ScrollReveal().reveal("#contact p", {
+          duration: 1000,
+          delay: 200,
+          opacity: 0,
+          easing: "ease-in-out",
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
