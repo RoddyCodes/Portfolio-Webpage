@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-webpage",
+  "version": "1.0.0",
+  "description": "This repository contains the code for my personal portfolio webpage. It's designed to showcase my skills, projects, and experience as a software engineer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoddyCodes/Portfolio-Webpage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RoddyCodes/Portfolio-Webpage/issues"
+  },
+  "homepage": "https://github.com/RoddyCodes/Portfolio-Webpage#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

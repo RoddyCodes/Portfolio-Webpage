@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <link href="../assets/css/output.css" rel="stylesheet" />
+    <style>
+      /* Basic styling for the rendered markdown content */
+      .post-content h1,
+      .post-content h2,
+      .post-content h3 {
+        font-weight: bold;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .post-content h1 {
+        font-size: 2.25rem;
+      }
+      .post-content h2 {
+        font-size: 1.875rem;
+      }
+      .post-content h3 {
+        font-size: 1.5rem;
+      }
+      .post-content p {
+        margin-bottom: 1rem;
+        line-height: 1.75;
+      }
+      .post-content a {
+        color: #0284c7;
+        text-decoration: underline;
+      }
+      .post-content ul {
+        list-style-type: disc;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .post-content code {
+        background-color: #f1f5f9;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-family: monospace;
+      }
+      .post-content pre {
+        background-color: #f1f5f9;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800">
+    <header class="bg-slate-800 text-white py-8">
+      <div class="container mx-auto px-6 max-w-3xl">
+        <a href="index.html" class="text-sky-400 hover:underline"
+          >&larr; Back to All Posts</a
+        >
+      </div>
+    </header>
+
+    <main class="py-16 sm:py-24">
+      <article class="container mx-auto px-6 max-w-3xl">
+        <h1 id="post-title" class="text-4xl font-bold text-slate-900"></h1>
+        <div id="post-content" class="text-lg text-slate-700 mt-8">
+          <p>Loading...</p>
+        </div>
+      </article>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center">
+      <p>&copy; 2025 Ryan Pham. All Rights Reserved.</p>
+    </footer>
+
+    <script src="post.js" defer></script>
+  </body>
+</html>
