@@ -69,6 +69,12 @@ blog/
     posts/             # Markdown sources (e.g., starting-masters-at-njit.md)
 .github/
     workflows/         # CI/CD definitions (CI lint/test + GitHub Pages deploy)
+tests/
+    unit/
+        theme.test.js   # Jest suite covering ThemeManager behaviour
+    e2e/
+        home.spec.js    # Playwright regression checks for key flows
+    playwright.config.js # Shared Playwright configuration used by npm run e2e
 ```
 
 ## CI/CD & Quality Gates

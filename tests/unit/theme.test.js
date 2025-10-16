@@ -1,6 +1,6 @@
 /* eslint-env node, jest */
 
-const ThemeManager = require("../assets/js/theme");
+const ThemeManager = require("../../assets/js/theme");
 
 const {
   DARK,
@@ -65,7 +65,7 @@ describe("ThemeManager", () => {
   });
 
   test("applyTheme toggles root classes and data attribute", () => {
-  applyTheme(DARK);
+    applyTheme(DARK);
     expect(document.documentElement.classList.contains("dark")).toBe(true);
     expect(document.documentElement.getAttribute("data-theme")).toBe(DARK);
     applyTheme(LIGHT);
@@ -119,7 +119,7 @@ describe("ThemeManager", () => {
     window.matchMedia = matcher;
     initThemeToggle();
     const toggle = document.querySelector("[data-theme-toggle]");
-    toggle.click(); // Persist dark mode
+    toggle.click();
     expect(getStoredTheme()).toBe(DARK);
     matcher.mql.dispatch(true);
     expect(document.documentElement.classList.contains("dark")).toBe(true);

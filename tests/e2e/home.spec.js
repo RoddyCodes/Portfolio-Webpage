@@ -29,7 +29,7 @@ test.describe('Portfolio homepage', () => {
     await expect(label).toHaveText('Light');
 
     await toggle.click();
-    await page.waitForTimeout(100); // allow DOM updates to propagate
+    await page.waitForTimeout(100);
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
     await expect(label).toHaveText('Dark');
 

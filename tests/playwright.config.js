@@ -1,9 +1,10 @@
 /* eslint-env node */
 
+const path = require('path');
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
-  testDir: './e2e',
+  testDir: path.resolve(__dirname, 'e2e'),
   timeout: 30 * 1000,
   expect: {
     timeout: 5000,
