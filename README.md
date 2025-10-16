@@ -11,6 +11,7 @@ This repository powers my public-facing portfolio and blog. The site highlights 
 - **Interactive chess game:** Powered by Chess.js with a custom UI and animated move highlights.
 - **Responsive layout:** Tailwind CSS handles spacing, typography, and component styling across viewports.
 - **Accessibility touches:** Keyboard-focusable controls, aria-pressed states, and visually hidden labels for assistive tech.
+- **Education timeline:** Animated campus badges for Rutgers, NJIT, and Columbia highlight the academic journey at a glance.
 
 ## Tech Stack
 

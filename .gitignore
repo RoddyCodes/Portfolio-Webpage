@@ -29,6 +29,7 @@ cv.pdf
 personal-info.json
 contact-details.json
 private-notes.md
+.github/copilot-instructions.md
 
 # OS Generated Files
 .DS_Store
