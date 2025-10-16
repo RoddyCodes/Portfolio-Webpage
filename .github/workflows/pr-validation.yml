@@ -7,7 +7,7 @@ on:
 jobs:
   validate:
     name: Validate Changes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,9 +22,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        uses: microsoft/playwright-github-action@v1
-        with:
-          with-deps: true
+        run: npx playwright install --with-deps
 
       - name: Run full test suite
         run: npm test

@@ -10,7 +10,7 @@ jobs:
   # Continuous Integration
   test:
     name: Test & Lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -34,9 +34,7 @@ jobs:
         run: npm run validate:html
 
       - name: Install Playwright browsers
-        uses: microsoft/playwright-github-action@v1
-        with:
-          with-deps: true
+        run: npx playwright install --with-deps
 
       - name: Run end-to-end tests
         run: npm run e2e
@@ -55,7 +53,7 @@ jobs:
   # Continuous Deployment
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: test
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     

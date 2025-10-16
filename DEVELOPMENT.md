@@ -55,7 +55,7 @@ Runs only on main branch pushes:
 - **GitHub Pages Deploy**: Automatic deployment to live site
 - **Environment**: Configured with proper permissions and security
 
-## Quality Gates
+- **CI runners:** GitHub-hosted Ubuntu 22.04 with Playwright browsers installed via `npx playwright install --with-deps`.
 
 ### Pre-commit Checks (Local)
 ```bash
