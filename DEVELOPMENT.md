@@ -19,6 +19,7 @@ npm run build
 # Run tests and linting
 npm run unit
 npm test
+npm run e2e
 
 # Serve locally for testing
 npm run serve
@@ -44,6 +45,7 @@ Runs on every push and PR:
 - **Unit Tests**: Jest suite (currently theme manager coverage)
 - **Linting**: ESLint for JavaScript, Stylelint for CSS
 - **HTML Validation**: Ensures proper HTML structure
+- **End-to-End Tests**: Playwright verification of homepage, theming, contact, and blog flows
 - **Build Test**: Verifies Tailwind CSS compilation
 - **Artifact Generation**: Creates preview builds for PRs
 
@@ -61,6 +63,7 @@ npm run lint:js      # JavaScript linting
 npm run lint:css     # CSS linting  
 npm run validate:html # HTML validation
 npm run unit         # Jest unit tests (theme manager)
+npm run e2e          # Playwright end-to-end flows
 npm run build        # Build verification
 ```
 

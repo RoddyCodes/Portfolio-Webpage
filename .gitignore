@@ -92,6 +92,7 @@ coverage/
 .coverage/
 *.lcov
 .mocha/
+test-results/
 
 # Database Files
 *.db

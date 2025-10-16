@@ -21,6 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Playwright browsers
+        uses: microsoft/playwright-github-action@v1
+        with:
+          with-deps: true
+
       - name: Run full test suite
         run: npm test
 
@@ -38,7 +43,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '✅ **CI/CD Validation Passed**\n\n- Unit Tests: Passed\n- Linting: Passed\n- HTML Validation: Passed\n- Build: Successful\n\nReady to merge!'
+              body: '✅ **CI/CD Validation Passed**\n\n- Unit Tests: Passed\n- Linting: Passed\n- HTML Validation: Passed\n- End-to-End Tests: Passed\n- Build: Successful\n\nReady to merge!'
             })
 
   preview-build:

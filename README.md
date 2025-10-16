@@ -11,7 +11,10 @@ This repository powers my public-facing portfolio and blog. The site highlights 
 - **Interactive chess game:** Powered by Chess.js with a custom UI and animated move highlights.
 - **Responsive layout:** Tailwind CSS handles spacing, typography, and component styling across viewports.
 - **Accessibility touches:** Keyboard-focusable controls, aria-pressed states, and visually hidden labels for assistive tech.
-- **Education timeline:** Animated campus badges for Rutgers, NJIT, and Columbia highlight the academic journey at a glance.
+- **Resume snapshot:** Objective, technical stack, experience, and leadership highlights surfaced directly on the homepage for quick scanning.
+- **Toolbox logos:** Devicon-powered badges and contextual icons highlight core technologies and leadership experience.
+- **Education timeline:** Refreshed badges with accurate timelines for Rutgers, NJIT, and Justice Through Code at Columbia.
+- **Automated test suite:** Jest unit tests plus Playwright end-to-end coverage to protect critical user flows.
 
 ## Tech Stack
 
@@ -38,9 +41,10 @@ npm run dev # Tailwind in watch mode
 - `npm run dev` – Tailwind in watch mode for rapid CSS feedback.
 - `npm run build` – Compile and minify Tailwind to `assets/css/output.css`.
 - `npm run unit` – Jest unit tests (currently focused on the theme manager).
+- `npm run e2e` – Playwright end-to-end tests against a local preview build.
 - `npm run lint` – ESLint + Stylelint checks.
 - `npm run validate:html` – html-validate across root and blog pages.
-- `npm test` – Full suite: unit → lint → HTML validation.
+- `npm test` – Full suite: unit → lint → HTML validation → Playwright end-to-end.
 - `npm run preview` – Build + serve for production parity.
 
 ## Directory Layout

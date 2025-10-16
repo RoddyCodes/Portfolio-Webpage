@@ -33,6 +33,14 @@ jobs:
       - name: Validate HTML
         run: npm run validate:html
 
+      - name: Install Playwright browsers
+        uses: microsoft/playwright-github-action@v1
+        with:
+          with-deps: true
+
+      - name: Run end-to-end tests
+        run: npm run e2e
+
       - name: Build Tailwind CSS
         run: npm run build
 
