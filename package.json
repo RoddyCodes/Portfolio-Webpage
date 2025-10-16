@@ -11,7 +11,8 @@
     "lint:js": "npx eslint \"assets/js/**/*.js\"",
     "lint": "npm run lint:css && npm run lint:js",
     "validate:html": "npx html-validate \"*.html\" \"blog/*.html\"",
-    "test": "npm run lint && npm run validate:html",
+    "unit": "jest --runInBand",
+    "test": "npm run unit && npm run lint && npm run validate:html",
     "serve": "npx http-server . -p 8080 -c-1",
     "preview": "npm run build && npm run serve"
   },
@@ -33,6 +34,8 @@
     "stylelint": "^16.0.0",
     "stylelint-config-standard": "^36.0.0",
     "html-validate": "^8.7.4",
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }

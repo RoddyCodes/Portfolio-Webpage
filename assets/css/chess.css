@@ -47,3 +47,24 @@
   font-weight: 500;
   color: #475569; /* Medium Slate */
 }
+
+html.dark .board {
+  border-color: #475569;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.6);
+}
+
+html.dark .board .light {
+  background-color: #1f2937; /* Slate-800 */
+}
+
+html.dark .board .dark {
+  background-color: #111827; /* Slate-900 */
+}
+
+html.dark .possible-move {
+  background-color: rgba(56, 189, 248, 0.35) !important;
+}
+
+html.dark .status {
+  color: #e2e8f0;
+}

@@ -1,117 +1,92 @@
-# My Portfolio Webpage
+# Portfolio Webpage
 
 ## Overview
 
-This repository contains the code for my personal portfolio webpage. It's designed to showcase my skills, projects, and experience as a software engineer.
+This repository powers my public-facing portfolio and blog. The site highlights featured projects, surfaces long-form writing, and includes an interactive chess experience built with vanilla JavaScript. Everything is deployed automatically to GitHub Pages via a CI/CD workflow.
 
-**Key Features:**
+## Key Features
 
-* **About Me:** A section introducing myself, my background, and my interests.
-* **Projects:** A showcase of my projects, including descriptions, links, and details.
-* **Chess Game:** An interactive chess game against an AI opponent.
-* **Contact:** Information on how to get in touch with me (e.g., email, LinkedIn, GitHub).
-* **Responsive Design:** The webpage is designed to be responsive and work well on different screen sizes (desktop, tablet, mobile).
-* **Interactive Elements:** The webpage includes animations and interactive elements to enhance user experience.
+- **Dynamic theming:** Light/dark themes with OS preference sync, persisted user choice, and graceful clamping for the chessboard.
+- **Markdown-powered blog:** Client-side rendering using Showdown with clean routing (`blog/post.html?post=slug`).
+- **Interactive chess game:** Powered by Chess.js with a custom UI and animated move highlights.
+- **Responsive layout:** Tailwind CSS handles spacing, typography, and component styling across viewports.
+- **Accessibility touches:** Keyboard-focusable controls, aria-pressed states, and visually hidden labels for assistive tech.
 
-## Technologies Used
+## Tech Stack
 
-* **HTML:** The structure of the webpage.
-* **CSS:** Styling for the webpage (e.g., layout, colors, fonts).
-* **JavaScript:** Interactive elements and functionality.
-* **AOS (Animate on Scroll):** Library for scroll-based animations.
-* **Chess.js:** Library for chess game logic.
-* **Git:** Version control.
-* **GitHub Pages:** Deployment.
+- **HTML / Tailwind CSS / Vanilla JavaScript**
+- **Chess.js** for chess engine logic
+- **ScrollReveal** for subtle entrance animations
+- **Showdown.js** for Markdown to HTML conversion
+- **GitHub Actions** for CI/CD (lint → unit tests → HTML validation → deploy)
 
-## Installation
+## Getting Started
 
-Since this is a static webpage, there is typically no installation required. To view the portfolio:
+```bash
+git clone https://github.com/RoddyCodes/Portfolio-Webpage.git
+cd Portfolio-Webpage
+npm install
+npm run dev # Tailwind in watch mode
+```
 
-1.  Clone this repository to your local machine:
+- Open `index.html` directly or run `npm run serve` for a local static server (`http://localhost:8080`).
+- The blog post viewer (`blog/post.html`) fetches markdown files, so use `npm run serve` (or VS Code Live Server) to avoid CORS issues locally.
 
-    ```bash
-    git clone https://github.com/RoddyCodes/Portfolio-Webpage.git
-    ```
+## Available Scripts
 
-2.  Navigate to the project directory:
+- `npm run dev` – Tailwind in watch mode for rapid CSS feedback.
+- `npm run build` – Compile and minify Tailwind to `assets/css/output.css`.
+- `npm run unit` – Jest unit tests (currently focused on the theme manager).
+- `npm run lint` – ESLint + Stylelint checks.
+- `npm run validate:html` – html-validate across root and blog pages.
+- `npm test` – Full suite: unit → lint → HTML validation.
+- `npm run preview` – Build + serve for production parity.
 
-    ```bash
-    cd Portfolio-Webpage
-    ```
+## Directory Layout
 
-3.  Open the `index.html` file in your web browser.
+```
+assets/
+    css/
+        input.css        # Tailwind source (fonts + @tailwind directives)
+        output.css       # Generated Tailwind build (do not edit by hand)
+        styles.css       # Supplemental styles
+        chess.css        # Chessboard-specific styling
+    images/
+        chess_images/    # Piece sprites used by the chess UI
+    js/
+        animations.js    # ScrollReveal configuration
+        chess.js         # Chess game UI + AI move logic
+        theme.js         # Dark-mode orchestration (also exported for tests)
+blog/
+    index.html         # Blog landing page (dynamically lists posts)
+    post.html          # Post renderer routed via query string
+    post.js            # Markdown fetch + Showdown rendering
+    posts/             # Markdown sources (e.g., starting-masters-at-njit.md)
+.github/
+    workflows/         # CI/CD definitions (CI lint/test + GitHub Pages deploy)
+```
 
-## Deployment
+## CI/CD & Quality Gates
 
-* **GitHub Pages:** This portfolio is deployed using GitHub Pages. The webpage is automatically built and deployed from the `main` branch. The live site can be found at (https://roddycodes.github.io/Portfolio-Webpage/)
+- **CI pipeline (`.github/workflows/deploy.yml`)**
+    - `npm run unit`
+    - `npm run lint`
+    - `npm run validate:html`
+    - `npm run build`
+- **PR validation (`.github/workflows/pr-validation.yml`)** runs the same checks and uploads a preview artifact.
+- Lock files (`package-lock.json`) are committed for reproducible builds and cacheable installs in CI.
 
-## Folder Structure
+## Dark Mode Implementation
 
-Here's the folder structure of the project:
+- Theme preference stored under `theme-preference` in `localStorage`.
+- `assets/js/theme.js` exposes a `ThemeManager` with helpers used by Jest tests.
+- Light/dark classes leverage Tailwind’s `darkMode: "class"` configuration.
+- Inline bootstrap scripts run in `<head>` to prevent initial flash-of-unstyled content.
 
+## Contact
 
-Portfolio-Webpage/
+- **Email:** roddyscodingservice@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/ryan-pham-385637181/
+- **GitHub:** https://github.com/RoddyCodes
 
-├── chess.css
-
-├── chess.html
-
-├── chess.js
-
-├── blog/
-
-│   └── blog.css
-
-│   └── index.html
-
-│   └── newBlog.html
-
-├── index.html
-
-├── scripts.js
-
-├── .github/
-
-│   └── workflows
-
-│           └── deploy.yml
-
-├── styles.css
-
-├── chess_images/
-
-│   └── [Multiple image files]
-
-├── README.md
-
-├── .gitignore
-
-└── professional_photo.jpg
-
-**Explanation:**
-
-* **`Portfolio-Webpage/`**:  The root directory of the project.
-* **`chess.css`**:  CSS file for the chess game.
-* **`chess.html`**:  HTML file for the chess game.
-* **`chess.js`**:  JavaScript file for the chess game.
-* **`index.html`**:  The main HTML file for the portfolio webpage.
-* **`scripts.js`**:  JavaScript file for general scripts.
-* **`styles.css`**:  CSS file for the portfolio webpage styles.
-* **`chess_images/`**:  Directory containing image files for the chess game.
-* **`README.md`**:  The README file for the project.
-* **`professional_photo.jpg`**: A professional photo of myself
-
-##  Future Improvements
-
-Here are some potential future improvements:
-
-* Add more projects to the portfolio.
-* Optimize for search engines (SEO).
-
-##  Contact
-
-* **Email:** roddyscodingservice@gmail.com
-* **LinkedIn:** https://www.linkedin.com/in/ryan-pham-385637181/
-* **GitHub:** (https://github.com/RoddyCodes)
-
-Feel free to reach out if you have any questions or would like to connect!
+Thanks for checking out the project! Feel free to open an issue or reach out if you spot something that could be improved.

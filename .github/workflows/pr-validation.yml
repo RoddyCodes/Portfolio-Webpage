@@ -38,7 +38,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '✅ **CI/CD Validation Passed**\n\n- Linting: Passed\n- HTML Validation: Passed\n- Build: Successful\n\nReady to merge!'
+              body: '✅ **CI/CD Validation Passed**\n\n- Unit Tests: Passed\n- Linting: Passed\n- HTML Validation: Passed\n- Build: Successful\n\nReady to merge!'
             })
 
   preview-build:

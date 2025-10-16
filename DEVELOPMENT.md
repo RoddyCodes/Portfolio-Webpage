@@ -17,6 +17,7 @@ npm run dev
 npm run build
 
 # Run tests and linting
+npm run unit
 npm test
 
 # Serve locally for testing
@@ -40,6 +41,7 @@ npm run serve
 
 ### Continuous Integration (CI)
 Runs on every push and PR:
+- **Unit Tests**: Jest suite (currently theme manager coverage)
 - **Linting**: ESLint for JavaScript, Stylelint for CSS
 - **HTML Validation**: Ensures proper HTML structure
 - **Build Test**: Verifies Tailwind CSS compilation
@@ -58,6 +60,7 @@ Runs only on main branch pushes:
 npm run lint:js      # JavaScript linting
 npm run lint:css     # CSS linting  
 npm run validate:html # HTML validation
+npm run unit         # Jest unit tests (theme manager)
 npm run build        # Build verification
 ```
 
@@ -85,7 +88,8 @@ npm run build        # Build verification
 1. **ESLint errors**: Check JavaScript syntax and unused variables
 2. **Stylelint errors**: Verify CSS follows standard conventions
 3. **HTML validation**: Ensure proper tag structure and attributes
-4. **Build failures**: Check Tailwind CSS input/output paths
+4. **Unit test failures**: Run `npm run unit` with `--watch` to iterate on ThemeManager logic
+5. **Build failures**: Check Tailwind CSS input/output paths
 
 ### Debug Commands
 ```bash

@@ -5,7 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ryan's Blog - Software & Learning</title>
     <link href="../assets/css/output.css" rel="stylesheet" />
+    <script>
+      (function () {
+        try {
+          const storageKey = "theme-preference";
+          const stored = localStorage.getItem(storageKey);
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          const theme = stored || (prefersDark ? "dark" : "light");
+          if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+          }
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          /* no-op */
+        }
+      })();
+    </script>
     <style>
+      :root {
+        color-scheme: light dark;
+      }
+
       /* Simple styles to make sure content is visible without Tailwind */
       .container {
         max-width: 800px;
@@ -45,11 +67,79 @@
         padding: 1.5rem 0;
         text-align: center;
       }
+
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      html.dark body {
+        background-color: #020617;
+        color: #e2e8f0;
+      }
+
+      html.dark .header {
+        background-color: #020617;
+        color: #e2e8f0;
+      }
+
+      html.dark .post-entry {
+        border-color: #1e293b;
+      }
+
+      html.dark .post-entry a {
+        color: #38bdf8;
+      }
+
+      html.dark .footer {
+        background-color: #020617;
+        color: #64748b;
+      }
+
+      .theme-toggle-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.25rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(148, 163, 184, 0.15);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle-button:hover,
+      .theme-toggle-button:focus-visible {
+        background: rgba(148, 163, 184, 0.25);
+        outline: 2px solid rgba(56, 189, 248, 0.5);
+        outline-offset: 2px;
+      }
+
+      html.dark .theme-toggle-button {
+        border-color: rgba(71, 85, 105, 0.6);
+        background: rgba(71, 85, 105, 0.3);
+      }
     </style>
   </head>
-  <body>
+  <body class="bg-slate-50 text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
     <header class="header">
       <div class="container">
+        <div class="flex justify-end">
+          <button
+            type="button"
+            class="theme-toggle-button"
+            data-theme-toggle
+            aria-pressed="false"
+          >
+            <span class="sr-only">Toggle theme</span>
+            <span data-theme-icon="light" aria-hidden="true">🌞</span>
+            <span data-theme-icon="dark" aria-hidden="true" class="hidden"
+              >🌙</span
+            >
+            <span data-theme-label>Light</span>
+          </button>
+        </div>
         <h1>Ryan's Tech Blog</h1>
         <p>Documenting my journey in software development and AI.</p>
         <a href="/" class="text-sky-400 mt-4 inline-block hover:underline"
@@ -97,5 +187,7 @@
     <footer class="footer">
       <p>&copy; 2025 Ryan Pham. All Rights Reserved.</p>
     </footer>
+
+    <script src="../assets/js/theme.js" defer></script>
   </body>
 </html>
