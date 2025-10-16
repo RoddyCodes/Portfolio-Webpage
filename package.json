@@ -4,7 +4,16 @@
   "description": "This repository contains the code for my personal portfolio webpage. It's designed to showcase my skills, projects, and experience as a software engineer.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify",
+    "build:watch": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
+    "dev": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
+    "lint:css": "npx stylelint \"assets/css/input.css\" \"assets/css/chess.css\" \"assets/css/styles.css\"",
+    "lint:js": "npx eslint \"assets/js/**/*.js\"",
+    "lint": "npm run lint:css && npm run lint:js",
+    "validate:html": "npx html-validate \"*.html\" \"blog/*.html\"",
+    "test": "npm run lint && npm run validate:html",
+    "serve": "npx http-server . -p 8080 -c-1",
+    "preview": "npm run build && npm run serve"
   },
   "repository": {
     "type": "git",
@@ -19,6 +28,11 @@
   },
   "homepage": "https://github.com/RoddyCodes/Portfolio-Webpage#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "eslint": "^8.57.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "html-validate": "^8.7.4",
+    "http-server": "^14.1.1"
   }
 }
